@@ -1,0 +1,21 @@
+# ambientes virtuais
+.venv/
+
+# repositórios clonados
+repos/
+
+# resultados brutos do ck
+ck_outputs/
+
+# ferramenta ck clonada/compilada
+ck/
+
+# segredos
+secrets/
+
+# caches
+__pycache__/
+*.pyc
+
+cria/
+venv/
