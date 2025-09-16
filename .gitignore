@@ -17,5 +17,3 @@ secrets/
 __pycache__/
 *.pyc
 
-cria/
-venv/
