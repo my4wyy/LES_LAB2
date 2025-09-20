@@ -30,6 +30,7 @@ query ($queryString: String!, $first: Int!, $after: String) {
         pushedAt
         diskUsage
         forkCount
+    releases { totalCount }
         primaryLanguage { name }
       }
     }
@@ -63,6 +64,7 @@ def main():
                 "pushedAt": repo.get("pushedAt"),
                 "diskUsage": repo.get("diskUsage"),
                 "forkCount": repo.get("forkCount"),
+                "releaseCount": (repo.get("releases") or {}).get("totalCount"),
                 "primaryLanguage": repo.get("primaryLanguage", {}).get("name")
             })
             if len(collected) >= total_to_collect:
@@ -72,7 +74,7 @@ def main():
             break
         after = page_info["endCursor"]
         time.sleep(1)
-    keys = ["nameWithOwner","url","description","stargazerCount","createdAt","pushedAt","diskUsage","forkCount","primaryLanguage"]
+    keys = ["nameWithOwner","url","description","stargazerCount","createdAt","pushedAt","diskUsage","forkCount","releaseCount","primaryLanguage"]
     os.makedirs("data", exist_ok=True)
     with open("data/top1000_java_repos.csv","w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=keys)
