@@ -6,7 +6,7 @@
 - Gabriel Faria  
 - João Victor Salim  
 - Lucas Garcia  
-- Maísa Pires  
+- Maisa Pires  
 - Miguel Vieira  
 
 ---
